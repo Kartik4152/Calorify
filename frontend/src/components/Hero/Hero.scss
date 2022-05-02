@@ -1,0 +1,104 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+@import "../../placeholders.scss";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: $color-white;
+  padding: 0 0 0 1rem;
+  &__logo {
+    height: 3rem;
+    @include respondAntd(xs) {
+      height: 2.4rem;
+    }
+  }
+  &__title {
+    font-size: 3rem;
+    font-family: $font-handwriting;
+    @include respondAntd(xs) {
+      font-size: 2.4rem;
+    }
+  }
+  &__menu {
+    border-bottom: none;
+    background-color: transparent;
+    &-icon {
+      color: $color-blue-antd;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  background-color: $color-white;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+  &__clipBG {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    background-color: $color-dark-blue;
+    clip-path: polygon(0% 20%, 100% 60%, 100% 100%, 0% 100%, 0% 50%);
+    @include respondAntd(lg) {
+      clip-path: none;
+      background-image: linear-gradient(
+        to bottom right,
+        $color-dark-blue,
+        $color-purple
+      );
+    }
+  }
+  &__row {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-top: 10rem;
+  }
+  &__image {
+    width: 80%;
+    outline: 1rem dashed $color-grey-11;
+    outline-offset: 2rem;
+    @include respondAntd(lg) {
+      outline: 1rem dashed $color-white;
+      outline-offset: 2rem;
+    }
+    @include respondAntd(xs) {
+      outline: 0.5rem dashed $color-white;
+      width: 100%;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 6rem;
+    font-weight: 700;
+    font-family: $font-nunito;
+    color: white;
+    text-align: center;
+    @include respondAntd(sm) {
+      font-size: 5rem;
+    }
+    @include respondAntd(xs) {
+      font-size: 4rem;
+      font-weight: 400;
+    }
+  }
+  &__image-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,71 @@
+@import "../../variables.scss";
+@import "../../placeholders.scss";
+@import "../../mixins.scss";
+
+.signupContainer {
+  min-height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    to bottom right,
+    $color-purple,
+    $color-dark-blue
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupModal {
+  background-color: $color-white;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.5rem 0.5rem 0.2rem rgba($color-black, 0.2);
+  position: relative;
+  @include respondAntd(xxl) {
+    width: 100rem;
+    padding: 8rem 5rem;
+  }
+  @include respondAntd(xl) {
+    width: 100rem;
+    padding: 8rem 5rem;
+  }
+  @include respondAntd(lg) {
+    width: 90rem;
+    padding: 7rem 5rem;
+  }
+  @include respondAntd(md) {
+    width: 75rem;
+    padding: 6rem 4rem;
+  }
+  @include respondAntd(sm) {
+    width: 30rem;
+    padding: 8rem 4rem 4rem 4rem;
+  }
+  &__header {
+    @extend %popupHeader;
+    top: 0;
+    left: 0;
+  }
+  &__left {
+    background-image: url("../../assets/images/signup.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &__form {
+    position: relative;
+    button {
+      width: 100%;
+    }
+    .ant-col.ant-form-item-control {
+      @media screen and (min-width: 575px) and (max-width: 575.9px) {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
+    .ant-col.ant-form-item-label {
+      @media screen and (min-width: 575px) and (max-width: 575.9px) {
+        text-align: left !important;
+      }
+    }
+  }
+}

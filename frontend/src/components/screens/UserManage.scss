@@ -1,0 +1,20 @@
+@import "../../placeholders.scss";
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.userManage {
+  &__card {
+    .ant-card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ant-card-actions {
+      background-color: $color-white;
+    }
+    .ant-card-meta {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

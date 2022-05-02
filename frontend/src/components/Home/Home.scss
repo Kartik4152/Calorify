@@ -1,0 +1,80 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+@import "../../placeholders.scss";
+
+.ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home {
+  background-color: $color-white;
+  &__header {
+    background-color: $color-white;
+    box-shadow: 0 0.2rem 1rem #d5d6d6;
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    @include respondAntd(sm) {
+      padding: 0 3rem 0 2rem;
+    }
+    @include respondAntd(xs) {
+      padding: 0 1rem 0 1rem;
+    }
+    &__logo {
+      cursor: default;
+      user-select: none;
+      height: 3rem;
+      margin-right: 1rem;
+      @include respondAntd(xs) {
+        height: 2.4rem;
+      }
+    }
+    &__menu {
+      border-bottom: none;
+      background-color: transparent;
+    }
+    &__title {
+      font-size: 3rem;
+      cursor: default;
+      user-select: none;
+      font-weight: bold;
+      font-family: $font-handwriting;
+      @include respondAntd(xs) {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+    padding-top: 4rem;
+    background-color: $color-white;
+    &-overlay {
+      background-color: rgba($color-black, 0.6);
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  &__sider {
+    background-color: $color-white;
+    border-right: 1px solid rgba(240, 240, 240, 1);
+    &__menu {
+      background-color: $color-white;
+      height: 100%;
+      border-right: none;
+    }
+  }
+
+  &__content {
+    background-color: $color-white;
+    padding-top: 8rem;
+    position: relative;
+  }
+}

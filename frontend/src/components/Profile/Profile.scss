@@ -1,0 +1,58 @@
+@import "../../variables.scss";
+@import "../../placeholders.scss";
+
+.profileContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to bottom right,
+    lighten($color-blue-antd, 40%),
+    lighten($color-dark-blue, 50%)
+  );
+}
+
+.profilePopup {
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0rem 1rem 0.2rem rgba($color-black, 0.2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.popup {
+  &__header {
+    left: 0;
+    @extend %popupHeader;
+    .anticon {
+      color: $color-white;
+    }
+  }
+  &__avatar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 5rem 3rem 5rem;
+    background-color: $color-dark-blue;
+    .ant-upload.ant-upload-select-picture-card {
+      margin: 0;
+    }
+    .ant-upload-picture-card-wrapper {
+      width: auto;
+    }
+  }
+  &__name {
+    color: $color-white;
+    font-size: 2rem;
+  }
+  &__details {
+    padding: 3rem 1rem;
+  }
+}

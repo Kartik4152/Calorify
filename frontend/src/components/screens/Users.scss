@@ -1,0 +1,47 @@
+@import "../../placeholders.scss";
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.ant-list-pagination {
+  text-align: center;
+}
+.user {
+  .ant-list-item-action {
+    text-align: center;
+    margin-left: 24px;
+  }
+  &__meta {
+    align-items: center;
+
+    @include respondAntd(md) {
+      justify-content: center;
+      flex-direction: column;
+      flex: unset;
+    }
+
+    .ant-list-item-meta-title {
+      text-transform: uppercase;
+      @include respondAntd(md) {
+        margin-bottom: 0;
+      }
+    }
+    .ant-list-item-meta-avatar {
+      @include respondAntd(md) {
+        margin-right: 0;
+      }
+    }
+    .ant-list-item-meta-content {
+      @include respondAntd(md) {
+        width: unset;
+        text-align: center;
+      }
+    }
+  }
+  &__calories {
+    display: flex;
+    flex-direction: column;
+    @include respondAntd(md) {
+      text-align: center;
+    }
+  }
+}

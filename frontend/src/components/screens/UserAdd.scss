@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+@import "../../placeholders.scss";
+@import "../../mixins.scss";
+
+.addUserRow {
+  padding: 5rem;
+  .ant-input-number,
+  .ant-picker {
+    @include respondAntd(xs) {
+      width: 100%;
+    }
+  }
+}

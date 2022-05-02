@@ -1,0 +1,88 @@
+@import "../../variables.scss";
+@import "../../placeholders.scss";
+@import "../../mixins.scss";
+
+.graph {
+  margin: 6rem 0rem;
+}
+
+.meals {
+  &__container {
+    padding: 2rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid $color-border;
+    border-radius: 1rem;
+    overflow: hidden;
+    .ant-typography-edit-content {
+      top: 0;
+      left: 0;
+    }
+    .ant-divider {
+      margin: 1rem;
+      width: 75%;
+      min-width: 75%;
+    }
+    &-title {
+      margin: 2rem 1rem 0rem 1rem;
+      font-size: 1.6rem !important;
+      white-space: inherit;
+    }
+    &-icon {
+      width: 100%;
+      font-size: 1.6rem;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > span:first-child {
+        background-color: rgba($color-grey-11, 0.6);
+        padding: 1.2rem;
+        flex: 1;
+      }
+      & > span:last-child {
+        background-color: rgba($color-grey-11, 0.6);
+        padding: 1.2rem;
+        flex: 1;
+      }
+    }
+  }
+}
+.healthy {
+  background-color: rgba(#62daab, 0.6);
+}
+.unhealthy {
+  background-color: rgba(#ff4d4f, 0.8);
+}
+
+.modal {
+  &__row {
+    .ant-input-number,
+    .ant-picker {
+      @include respondAntd(xs) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.ant-picker-panels > *:first-child button.ant-picker-header-next-btn {
+  visibility: visible !important;
+}
+
+.ant-picker-panels > *:first-child button.ant-picker-header-super-next-btn {
+  visibility: visible !important;
+}
+
+.ant-picker-panels > div.ant-picker-panel:nth-of-type(2) {
+  display: none !important;
+}
+
+.ant-picker-footer-extra > div {
+  flex-wrap: wrap !important;
+}

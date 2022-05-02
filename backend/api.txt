@@ -1,0 +1,58 @@
+User:{
+id:number,
+email:string, //max 320 chars
+password:hashed_string, // max 100 chars
+name:string, //max 60 chars
+meals:OneToMany-> [],
+calorielimit: integer, //max 100000
+role:'user'|'mod'|'admin'
+}
+
+meal:{
+mealId:number,
+name:string, //max 60chars
+userId:ManyToOne->number
+calories:number //max 100000
+date:{year,month,date}
+time:{hours,minutes}
+}
+
+
+/authentication/
+
+POST /authentication/login   (email,password) -> (jwt) 200-OK,400-BadRequest,401-Unauthorized
+POST /authentication/signup  (email,name,password) -> (statusMessage) 201-Created,400-BadRequest,409-Conflict
+
+/user/
+
+GET /user (jwt) -> (username,email,calorielimit,meals[])
+POST /user/calorielimit  (jwt,calorielimit) -> (calorielimit) 201-Created, 400-BadRequest, 403-forbidden,401-unauthorized 
+GET /users/calorielimit (jwt) -> (calorielimit) 200-OK, 400-BadRequest, 403-forbidden, 401-unauthorized
+
+/meals/
+
+POST /meals/ (meal,jwt) -> created_meal -> 201-Created, 400-BadRequest, 403-forbidden, 401-unauthorized
+GET /meals/ (jwt) -> meals[]
+PUT /meals/ (meal,jwt) -> updated_meal
+DELETE /meals/:id (jwt) -> deleted_meal
+
+/moderator/	
+
+GET /users?offset=&limit= (jwt) -> users[]
+POST /users (user,jwt) -> created_user
+PUT /users (user,jwt) -> updated_user
+DELETE /users/:id (jwt) -> deleted_user
+
+/admin/
+
+POST /changeUserRole (id,new_role,jwt) -> {role:""}
+GET /users/byemail?
+GET /users (jwt) -> users[]
+POST /users (user,jwt) -> created_user
+PUT /users (user,jwt) -> updated_user
+DELETE /users/:id (jwt) -> deleted_user
+
+POST /meals/ (meal,userid,jwt) -> created_meal -> 201-Created, 400-BadRequest, 403-forbidden, 401-unauthorized
+GET /meals/ (userid,jwt) -> meals[]
+PUT /meals/ (meal,jwt) -> updated_meal
+DELETE /meals/:id (jwt) -> deleted_meal
