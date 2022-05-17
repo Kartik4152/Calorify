@@ -1,7 +1,7 @@
 import axios from "axios";
 import authHeader from "./auth.header";
 
-const MEAL_API = "https://calorifyapp.herokuapp.com/meals/";
+const MEAL_API = "https://calorify.onrender.com/meals/";
 
 class mealService {
   addMeal(meal) {

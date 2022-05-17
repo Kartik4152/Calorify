@@ -2,7 +2,7 @@ import axios from "axios";
 import authHeader from "./auth.header";
 import { userService } from "./user.service";
 
-const MOD_API = "https://calorifyapp.herokuapp.com/moderator/";
+const MOD_API = "https://calorify.onrender.com/moderator/";
 class modService extends userService {
   createUser(password, email, name, role, calorielimit = 2000) {
     return axios

@@ -2,7 +2,7 @@ import axios from "axios";
 import authHeader from "./auth.header";
 import { userService } from "./user.service";
 
-const ADMIN_API = "https://calorifyapp.herokuapp.com/admin/";
+const ADMIN_API = "https://calorify.onrender.com/admin/";
 
 class adminService extends userService {
   changeRole(id, newRole) {

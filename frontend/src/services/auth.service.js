@@ -1,7 +1,7 @@
 import axios from "axios";
 import authHeader from "./auth.header";
 
-const PROD_API = "https://calorifyapp.herokuapp.com/authentication/";
+const PROD_API = "https://calorify.onrender.com/authentication/";
 
 class AuthService {
   login(email, password, remember) {
@@ -63,7 +63,7 @@ class AuthService {
   }
   async checkLoginState() {
     return axios
-      .get("https://calorifyapp.herokuapp.com/user/calorielimit", {
+      .get("https://calorify.onrender.com/user/calorielimit", {
         headers: authHeader(),
       })
       .then((res) => res.status === 200)

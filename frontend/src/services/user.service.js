@@ -1,7 +1,7 @@
 import axios from "axios";
 import authHeader from "./auth.header";
 
-const USER_API = "https://calorifyapp.herokuapp.com/user/";
+const USER_API = "https://calorify.onrender.com/user/";
 
 class userService {
   getUser() {
